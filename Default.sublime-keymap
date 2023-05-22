@@ -1,0 +1,68 @@
+[
+    {
+        "keys": ["a"],
+        "command": "neovintageous_tree_new_file",
+        "context": [
+            { "key": "control", "operand": "sidebar_tree" }
+        ]
+    },
+    {
+        "keys": ["A"],
+        "command": "neovintageous_tree_new_folder",
+        "context": [
+            { "key": "control", "operand": "sidebar_tree" }
+        ]
+    },
+    {
+        "keys": ["d"],
+        "command": "neovintageous_tree_duplicate",
+        "context": [
+            { "key": "control", "operand": "sidebar_tree" }
+        ]
+    },
+    {
+        "keys": ["f"],
+        "command": "neovintageous_tree_find",
+        "context": [
+            { "key": "control", "operand": "sidebar_tree" }
+        ]
+    },
+    {
+        "keys": ["f2"],
+        "command": "neovintageous_tree_move",
+        "context": [
+            { "key": "control", "operand": "sidebar_tree" }
+        ]
+    },
+    {
+        "keys": ["i"],
+        "command": "neovintageous_tree_open",
+        "args": { "split": true },
+        "context": [
+            { "key": "control", "operand": "sidebar_tree" }
+        ]
+    },
+    {
+        "keys": ["m"],
+        "command": "neovintageous_tree_move",
+        "context": [
+            { "key": "control", "operand": "sidebar_tree" }
+        ]
+    },
+    {
+        "keys": ["s"],
+        "command": "neovintageous_tree_open",
+        "args": { "vsplit": true },
+        "context": [
+            { "key": "control", "operand": "sidebar_tree" }
+        ]
+    },
+    {
+        "keys": ["t"],
+        "command": "neovintageous_tree_open",
+        "args": { "tab": true },
+        "context": [
+            { "key": "control", "operand": "sidebar_tree" }
+        ]
+    }
+]
