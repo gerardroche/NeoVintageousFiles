@@ -64,5 +64,32 @@
         "context": [
             { "key": "control", "operand": "sidebar_tree" }
         ]
+    },
+    {
+        "keys": ["ctrl+s"],
+        "command": "neovintageous_tree_open",
+        "args": { "split": true },
+        "context": [
+            { "key": "overlay_visible" },
+            { "key": "control", "operand": "overlay_control goto_file" }
+        ]
+    },
+    {
+        "keys": ["ctrl+t"],
+        "command": "neovintageous_tree_open",
+        "args": { "tab": true },
+        "context": [
+            { "key": "overlay_visible" },
+            { "key": "control", "operand": "overlay_control goto_file" }
+        ]
+    },
+    {
+        "keys": ["ctrl+v"],
+        "command": "neovintageous_tree_open",
+        "args": { "vsplit": true },
+        "context": [
+            { "key": "overlay_visible" },
+            { "key": "control", "operand": "overlay_control goto_file" }
+        ]
     }
 ]
