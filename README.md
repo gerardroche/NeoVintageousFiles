@@ -19,6 +19,6 @@ Key | Description | Status
 <kbd>f</kbd> | Find. | :heavy_check_mark:
 <kbd>m</kbd> | Move. | :heavy_check_mark:
 <kbd>f2</kbd> | Move. | :heavy_check_mark:
-<kbd>i</kbd> | Open in split. |
-<kbd>s</kbd> | Open in vertical split. |
-<kbd>t</kbd> | Open in tab. |
+<kbd>i</kbd> | Open in split. | :heavy_check_mark:
+<kbd>s</kbd> | Open in vertical split. | :heavy_check_mark:
+<kbd>t</kbd> | Open in tab. | :heavy_check_mark:
