@@ -16,7 +16,7 @@ A Sublime Text for [NeoVintageous](https://github.com/NeoVintageous/NeoVintageou
 Key           | Description               | Status
 :------------ | :------------------------ | :-----------------
 <kbd>a</kbd>  | Add file.                 | :heavy_check_mark:
-<kbd>A</kbd>  | Add folder.               |
+<kbd>A</kbd>  | Add folder.               | :heavy_check_mark:
 <kbd>d</kbd>  | Duplicate.                | :heavy_check_mark:
 <kbd>f</kbd>  | Find.                     | :heavy_check_mark:
 <kbd>m</kbd>  | Move.                     | :heavy_check_mark:

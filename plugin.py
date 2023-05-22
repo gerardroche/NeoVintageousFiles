@@ -15,7 +15,7 @@ class NeovintageousTreeNewFile(sublime_plugin.WindowCommand):
 class NeovintageousTreeNewFolder(sublime_plugin.WindowCommand):
 
     def run(self) -> None:
-        _run_command(self.window, 'side_bar_new_directory')
+        _run_command(self.window, 'side_bar_new', {'paths': []})
 
     def is_enabled(self) -> bool:
         return _is_enabled(self.window)
