@@ -1,10 +1,16 @@
-# NeoVintageousTree
+# NeoVintageousFiles
 
-A Sublime Text for [NeoVintageous](https://github.com/NeoVintageous/NeoVintageous) file commands.
+:sparkles: :rocket: A Sublime Text plugin for [NeoVintageous](https://github.com/NeoVintageous/NeoVintageous) file commands.
 
 **:sparkles: :sparkles: :sparkles: Experimental :sparkles: :sparkles: :sparkles:**
 
-## Dependencies
+## Installation
+
+**Pending availability in Package Control.**
+
+Install via [Package Control](https://packagecontrol.io/packages/NeoVintageousFiles).
+
+**Install dependencies.**
 
 - [SideBarTools](https://packagecontrol.io/packages/SideBarTools)
 - [Origami](https://packagecontrol.io/packages/Origami)

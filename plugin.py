@@ -5,7 +5,7 @@ from sublime import save_settings
 import sublime_plugin
 
 
-class NeovintageousTreeNewFile(sublime_plugin.WindowCommand):
+class NeovintageousFilesNewFile(sublime_plugin.WindowCommand):
 
     def run(self) -> None:
         _run_command(self.window, 'side_bar_new', {'paths': []})
@@ -14,7 +14,7 @@ class NeovintageousTreeNewFile(sublime_plugin.WindowCommand):
         return _is_enabled(self.window)
 
 
-class NeovintageousTreeNewFolder(sublime_plugin.WindowCommand):
+class NeovintageousFilesNewFolder(sublime_plugin.WindowCommand):
 
     def run(self) -> None:
         _run_command(self.window, 'side_bar_new', {'paths': []})
@@ -23,7 +23,7 @@ class NeovintageousTreeNewFolder(sublime_plugin.WindowCommand):
         return _is_enabled(self.window)
 
 
-class NeovintageousTreeDuplicate(sublime_plugin.WindowCommand):
+class NeovintageousFilesDuplicate(sublime_plugin.WindowCommand):
 
     def run(self) -> None:
         _run_command(self.window, 'side_bar_duplicate', {'paths': []})
@@ -32,7 +32,7 @@ class NeovintageousTreeDuplicate(sublime_plugin.WindowCommand):
         return _is_enabled(self.window)
 
 
-class NeovintageousTreeFind(sublime_plugin.WindowCommand):
+class NeovintageousFilesFind(sublime_plugin.WindowCommand):
 
     def run(self) -> None:
         self.window.run_command('show_panel', {
@@ -43,7 +43,7 @@ class NeovintageousTreeFind(sublime_plugin.WindowCommand):
         return _is_enabled(self.window)
 
 
-class NeovintageousTreeMove(sublime_plugin.WindowCommand):
+class NeovintageousFilesMove(sublime_plugin.WindowCommand):
 
     def run(self) -> None:
         _run_command(self.window, 'side_bar_move', {'paths': []})
@@ -52,7 +52,7 @@ class NeovintageousTreeMove(sublime_plugin.WindowCommand):
         return _is_enabled(self.window)
 
 
-class NeovintageousTreeOpen(sublime_plugin.WindowCommand):
+class NeovintageousFilesOpen(sublime_plugin.WindowCommand):
 
     def run(self, tab: bool = None, split: bool = None, vsplit: bool = None) -> None:
         fname = self.window.active_view().file_name()
