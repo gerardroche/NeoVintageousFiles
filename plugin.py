@@ -6,7 +6,7 @@ import sublime_plugin
 class NeovintageousTreeNewFile(sublime_plugin.WindowCommand):
 
     def run(self) -> None:
-        _run_command(self.window, 'new_file_at', {'dirs': []})
+        _run_command(self.window, 'side_bar_new', {'paths': []})
 
     def is_enabled(self) -> bool:
         return _is_enabled(self.window)
@@ -24,7 +24,7 @@ class NeovintageousTreeNewFolder(sublime_plugin.WindowCommand):
 class NeovintageousTreeDuplicate(sublime_plugin.WindowCommand):
 
     def run(self) -> None:
-        _run_command(self.window, 'side_bar_duplicate')
+        _run_command(self.window, 'side_bar_duplicate', {'paths': []})
 
     def is_enabled(self) -> bool:
         return _is_enabled(self.window)
@@ -33,8 +33,9 @@ class NeovintageousTreeDuplicate(sublime_plugin.WindowCommand):
 class NeovintageousTreeFind(sublime_plugin.WindowCommand):
 
     def run(self) -> None:
-        # TODO can the current file directory be prefilled? #3
-        self.window.run_command('show_panel', {'panel': 'find_in_files'})
+        self.window.run_command('show_panel', {
+            'panel': 'find_in_files'
+        })
 
     def is_enabled(self) -> bool:
         return _is_enabled(self.window)
@@ -43,7 +44,7 @@ class NeovintageousTreeFind(sublime_plugin.WindowCommand):
 class NeovintageousTreeMove(sublime_plugin.WindowCommand):
 
     def run(self) -> None:
-        _run_command(self.window, 'side_bar_rename')
+        _run_command(self.window, 'side_bar_move', {'paths': []})
 
     def is_enabled(self) -> bool:
         return _is_enabled(self.window)
@@ -64,14 +65,15 @@ class NeovintageousTreeOpen(sublime_plugin.WindowCommand):
 
         Defaults to opening in a new tab.
         """
-        # @todo open tree view file in tab #1
-        transient_view = self.window.transient_view_in_group(self.window.active_group())
-        if not transient_view:
-            return
-
-        fname = transient_view.file_name()
+        fname = self.window.active_view().file_name()
         if not fname:
-            return
+            transient_view = self.window.transient_view_in_group(self.window.active_group())
+            if not transient_view:
+                return
+
+            fname = transient_view.file_name()
+            if not fname:
+                return
 
         if vsplit:
             self.open_file_in_vertical_split(fname)
@@ -87,11 +89,15 @@ class NeovintageousTreeOpen(sublime_plugin.WindowCommand):
 
     def open_file_in_vertical_split(self, fname):
         self.window.open_file(fname)
-        self.window.run_command('create_pane_with_file', {'direction': 'right'})
+        self.window.run_command('create_pane_with_file', {
+            'direction': 'right'
+        })
 
     def open_file_in_horizontal_split(self, fname):
         self.window.open_file(fname)
-        self.window.run_command('create_pane_with_file', {'direction': 'down'})
+        self.window.run_command('create_pane_with_file', {
+            'direction': 'down'
+        })
 
     def open_file_in_tab(self, fname):
         self.window.open_file(fname)
@@ -116,10 +122,9 @@ def _run_command(window, command: str, args=None) -> None:
 
     - Doesn't work if the file under cursor is a folder so don't do that.
     """
-    print('command =', command, 'args =', args)
-    # preview_on_click = _ensure_file_under_cursor_is_open(window)
-    # window.run_command(command, args)
-    # _ensure_file_under_cursor_is_open_cleanup(window, preview_on_click)
+    preview_on_click = _ensure_file_under_cursor_is_open(window)
+    window.run_command(command, args)
+    _ensure_file_under_cursor_is_open_cleanup(window, preview_on_click)
 
 
 def _ensure_file_under_cursor_is_open(window):
@@ -127,9 +132,8 @@ def _ensure_file_under_cursor_is_open(window):
     preview_on_click = preferences.get('preview_on_click')
 
     if not preview_on_click:
-        print('NOT preview_on_click =', preview_on_click)
-        # preferences.set('preview_on_click', True)
-        # _save_preferences()
+        preferences.set('preview_on_click', True)
+        _save_preferences()
 
     # Force cursor repaint (Workaround). Helps scroll active file into view and
     # shakes off previous sidebar (highlighted) cursor position
@@ -140,15 +144,13 @@ def _ensure_file_under_cursor_is_open(window):
 
 
 def _ensure_file_under_cursor_is_open_cleanup(window, preview_on_click) -> None:
-    print('_ensure_file_under_cursor_is_open_cleanup')
-    print('preview_on_click =', preview_on_click)
-    # if not preview_on_click:
-    #     preferences = _load_preferences()
-    #     preferences.set('preview_on_click', False)
-    #     _save_preferences()
-    #     view = window.active_view()
-    #     if view and view.is_read_only():
-    #         view.close()
+    if not preview_on_click:
+        preferences = _load_preferences()
+        preferences.set('preview_on_click', False)
+        _save_preferences()
+        view = window.active_view()
+        if view and view.is_read_only():
+            view.close()
 
 
 def _load_preferences():
