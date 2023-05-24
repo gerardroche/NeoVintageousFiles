@@ -38,3 +38,7 @@ Key               | Description               | Status
 <kbd>ctrl+s</kbd> | Open in horizontal split. | :heavy_check_mark:
 <kbd>ctrl+t</kbd> | Add in tab.               | :heavy_check_mark:
 <kbd>ctrl+v</kbd> | Add in vertical split.    | :heavy_check_mark:
+
+## License
+
+Released under the [GPL-3.0-or-later License](LICENSE).
