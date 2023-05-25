@@ -24,7 +24,7 @@ import sublime_plugin
 
 class NeovintageousFilesNewFile(sublime_plugin.WindowCommand):
 
-    def run(self) -> None:
+    def run(self):
         _run_command(self.window, 'side_bar_new', {'paths': []})
 
     def is_enabled(self) -> bool:
@@ -33,7 +33,7 @@ class NeovintageousFilesNewFile(sublime_plugin.WindowCommand):
 
 class NeovintageousFilesNewFolder(sublime_plugin.WindowCommand):
 
-    def run(self) -> None:
+    def run(self):
         _run_command(self.window, 'side_bar_new', {'paths': []})
 
     def is_enabled(self) -> bool:
@@ -42,7 +42,7 @@ class NeovintageousFilesNewFolder(sublime_plugin.WindowCommand):
 
 class NeovintageousFilesDuplicate(sublime_plugin.WindowCommand):
 
-    def run(self) -> None:
+    def run(self):
         _run_command(self.window, 'side_bar_duplicate', {'paths': []})
 
     def is_enabled(self) -> bool:
@@ -62,7 +62,7 @@ class NeovintageousFilesFind(sublime_plugin.WindowCommand):
 
 class NeovintageousFilesMove(sublime_plugin.WindowCommand):
 
-    def run(self) -> None:
+    def run(self):
         _run_command(self.window, 'side_bar_move', {'paths': []})
 
     def is_enabled(self) -> bool:
@@ -71,7 +71,7 @@ class NeovintageousFilesMove(sublime_plugin.WindowCommand):
 
 class NeovintageousFilesOpen(sublime_plugin.WindowCommand):
 
-    def run(self, tab: bool = None, split: bool = None, vsplit: bool = None) -> None:
+    def run(self, tab=None, split=None, vsplit=None) -> None:
         fname = self.window.active_view().file_name()
         if not fname:
             transient_view = self.window.transient_view_in_group(self.window.active_group())
@@ -114,7 +114,7 @@ def _is_enabled(window) -> bool:
     return True if window.active_view() else False
 
 
-def _run_command(window, command: str, args: dict = None) -> None:
+def _run_command(window, command: str, args: None) -> None:
     """There is no api to get a path under the cursor.
 
     The only workaround I know, is the preview on click feature which opens the
@@ -129,24 +129,29 @@ def _run_command(window, command: str, args: dict = None) -> None:
     with _save_preferences() as preferences:
         preview_on_click = preferences.get('preview_on_click')
         if not preview_on_click:
+            # Temporarily set preview on click
             preferences.set('preview_on_click', True)
 
-    # Force cursor repaint (Workaround). Helps scroll active file into view
-    # and shakes off previous sidebar (highlighted) cursor position
-    window.run_command('move', {'by': 'lines', 'forward': True})
-    window.run_command('move', {'by': 'lines', 'forward': False})
+    if not preview_on_click:
+        # Force preview on click to fire.
+        window.run_command('move', {'by': 'lines', 'forward': True})
+        window.run_command('move', {'by': 'lines', 'forward': False})
 
     # Run command.
     window.run_command(command, args)
 
     if not preview_on_click:
+        # Reset preview on click if needed
         with _save_preferences() as preferences:
             preferences.set('preview_on_click', False)
 
-    # Cleanup preview view.
-    view = window.active_view()
-    if view and view.is_read_only():
-        view.close()
+        # Cleanup preview view.
+        view = window.active_view()
+        if view and view.is_read_only():
+            view.close()
+
+        # Put focus back on input.
+        window.run_command('show_panel', {'panel': 'input'})
 
 
 @contextmanager
