@@ -96,13 +96,13 @@ class NeovintageousFilesOpen(sublime_plugin.WindowCommand):
 
     def open_file_in_vertical_split(self, fname: str) -> None:
         self.window.open_file(fname)
-        self.window.run_command('create_pane_with_file', {
+        self.window.run_command('carry_file_to_pane', {
             'direction': 'right'
         })
 
     def open_file_in_horizontal_split(self, fname: str) -> None:
         self.window.open_file(fname)
-        self.window.run_command('create_pane_with_file', {
+        self.window.run_command('carry_file_to_pane', {
             'direction': 'down'
         })
 
