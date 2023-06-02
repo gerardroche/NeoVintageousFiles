@@ -1,4 +1,4 @@
-# NeoVintageousFiles
+# NeoVintageous Files
 
 :sparkles: :rocket: A Sublime Text plugin for [NeoVintageous](https://github.com/NeoVintageous/NeoVintageous) file commands.
 
@@ -6,9 +6,7 @@
 
 ## Installation
 
-**Pending availability in Package Control.**
-
-Install via [Package Control](https://packagecontrol.io/packages/NeoVintageousFiles).
+Install [NeoVintageousFiles](https://packagecontrol.io/packages/NeoVintageousFiles) via Package Control.
 
 **Install dependencies.**
 
