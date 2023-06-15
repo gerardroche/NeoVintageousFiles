@@ -1,21 +1,21 @@
 # NeoVintageous Files
 
-:sparkles: :rocket: A Sublime Text plugin for [NeoVintageous](https://github.com/NeoVintageous/NeoVintageous) file commands.
+:sparkles: :rocket: Single key side bar and overlay file commands. Compliments [NeoVintageous](https://github.com/NeoVintageous/NeoVintageous).
 
-**:sparkles: :sparkles: :sparkles: Experimental :sparkles: :sparkles: :sparkles:**
+**:sparkles: :sparkles: :sparkles: Experimental :sparkles: :sparkles: :sparkles: Feedback and issues are very welcomed.**
 
 ## Installation
 
 Install [NeoVintageousFiles](https://packagecontrol.io/packages/NeoVintageousFiles) via Package Control.
 
-**Install dependencies.**
+**Install dependencies via Package Control.**
 
-- [SideBarTools](https://packagecontrol.io/packages/SideBarTools)
-- [Origami](https://packagecontrol.io/packages/Origami)
+- [SideBarTools](https://packagecontrol.io/packages/SideBarTools) - Supports side bar commands.
+- [Origami](https://packagecontrol.io/packages/Origami) - Supports opening files in splits.
 
 ## Key Bindings
 
-**Side Bar**
+**Side bar**
 
 Key           | Description               | Status
 :------------ | :------------------------ | :-----------------
@@ -29,7 +29,7 @@ Key           | Description               | Status
 <kbd>s</kbd>  | Open in vertical split.   | :heavy_check_mark:
 <kbd>t</kbd>  | Open in tab.              | :heavy_check_mark:
 
-**Overlay**
+**Files overlay**
 
 Key               | Description               | Status
 :---------------- | :------------------------ | :-----------------
