@@ -15,27 +15,30 @@ Install [NeoVintageousFiles](https://packagecontrol.io/packages/NeoVintageousFil
 
 ## Key Bindings
 
-**Side bar**
+**Side bar commands**
 
-Key           | Description               | Status
-:------------ | :------------------------ | :-----------------
-<kbd>a</kbd>  | Add file.                 | :heavy_check_mark:
-<kbd>A</kbd>  | Add folder.               | :heavy_check_mark:
-<kbd>d</kbd>  | Duplicate.                | :heavy_check_mark:
-<kbd>f</kbd>  | Find.                     | :heavy_check_mark:
-<kbd>m</kbd>  | Move.                     | :heavy_check_mark:
-<kbd>f2</kbd> | Move.                     | :heavy_check_mark:
-<kbd>i</kbd>  | Open in horizontal split. | :heavy_check_mark:
-<kbd>s</kbd>  | Open in vertical split.   | :heavy_check_mark:
-<kbd>t</kbd>  | Open in tab.              | :heavy_check_mark:
+| Key           | Description
+| :------------ | :------------------------
+| `a`           | Add file.
+| `A`           | Add folder.
+| `d`           | Duplicate file.
+| `f`           | Open find panel.
+| `m` or `F2`   | Move file.
+| `s`           | Open file selection in a vertical split.
+| `i`           | Open file selection in a horizontal split.
+| `t`           | Open file selection in a new tab.
 
-**Files overlay**
+**Goto File overlay commands**
 
-Key               | Description               | Status
-:---------------- | :------------------------ | :-----------------
-<kbd>ctrl+s</kbd> | Open in horizontal split. | :heavy_check_mark:
-<kbd>ctrl+t</kbd> | Add in tab.               | :heavy_check_mark:
-<kbd>ctrl+v</kbd> | Add in vertical split.    | :heavy_check_mark:
+| Key                   | Description
+| :-------------------- | :----------
+| `CTRL-v`              | Open file selection in a vertical split.
+| `CTRL-x` or `CTRL-s`  | Open file selection in a horizontal split.
+| `CTRL-t`              | Open file selection in a new tab.
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md).
 
 ## License
 

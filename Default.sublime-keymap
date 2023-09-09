@@ -66,6 +66,15 @@
         ]
     },
     {
+        "keys": ["ctrl+x"],
+        "command": "neovintageous_files_open",
+        "args": { "split": true },
+        "context": [
+            { "key": "overlay_visible" },
+            { "key": "control", "operand": "overlay_control goto_file" }
+        ]
+    },
+    { // alias of ctrl-x
         "keys": ["ctrl+s"],
         "command": "neovintageous_files_open",
         "args": { "split": true },
