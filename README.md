@@ -1,34 +1,34 @@
 # NeoVintageous Files
 
-:sparkles: :rocket: Single key side bar and overlay file commands. Compliments [NeoVintageous](https://github.com/NeoVintageous/NeoVintageous).
+:sparkles: :rocket: Introducing single-key sidebar and overlay file commands, complementing [NeoVintageous](https://github.com/NeoVintageous/NeoVintageous).
 
-**:sparkles: :sparkles: :sparkles: Experimental :sparkles: :sparkles: :sparkles: Feedback and issues are very welcomed.**
+**:sparkles: :sparkles: :sparkles: Experimental :sparkles: :sparkles: :sparkles: Feedback and issue reports are highly encouraged.**
 
 ## Installation
 
-Install [NeoVintageousFiles](https://packagecontrol.io/packages/NeoVintageousFiles) via Package Control.
+To install [NeoVintageousFiles](https://packagecontrol.io/packages/NeoVintageousFiles), use Package Control.
 
-**Install dependencies via Package Control.**
+**Additionally, install the required dependencies through Package Control:**
 
-- [SideBarTools](https://packagecontrol.io/packages/SideBarTools) - Supports side bar commands.
-- [Origami](https://packagecontrol.io/packages/Origami) - Supports opening files in splits.
+- [SideBarTools](https://packagecontrol.io/packages/SideBarTools) - Adds support for sidebar commands.
+- [Origami](https://packagecontrol.io/packages/Origami) - Enhances the ability to open files in split view.
 
 ## Key Bindings
 
-**Side bar commands**
+**Sidebar Commands**
 
 | Key           | Description
 | :------------ | :------------------------
-| `a`           | Add file.
-| `A`           | Add folder.
-| `d`           | Duplicate file.
-| `f`           | Open find panel.
-| `m` or `F2`   | Move file.
+| `a`           | Add a file.
+| `A`           | Add a folder.
+| `d`           | Duplicate a file.
+| `f`           | Open the find panel.
+| `m` or `F2`   | Move a file.
 | `s`           | Open file selection in a vertical split.
 | `i`           | Open file selection in a horizontal split.
 | `t`           | Open file selection in a new tab.
 
-**Goto File overlay commands**
+**Goto File Overlay Commands**
 
 | Key                   | Description
 | :-------------------- | :----------
