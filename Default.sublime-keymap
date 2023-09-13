@@ -35,7 +35,7 @@
         ]
     },
     {
-        "keys": ["i"],
+        "keys": ["i"], // Alias of ctrl+x
         "command": "neovintageous_files_open",
         "args": { "split": true },
         "context": [
@@ -50,7 +50,7 @@
         ]
     },
     {
-        "keys": ["s"],
+        "keys": ["s"], // Alias of ctrl+v
         "command": "neovintageous_files_open",
         "args": { "vsplit": true },
         "context": [
@@ -58,9 +58,17 @@
         ]
     },
     {
-        "keys": ["t"],
+        "keys": ["t"], // Alias of ctrl+t
         "command": "neovintageous_files_open",
         "args": { "tab": true },
+        "context": [
+            { "key": "control", "operand": "sidebar_tree" }
+        ]
+    },
+    {
+        "keys": ["ctrl+x"],
+        "command": "neovintageous_files_open",
+        "args": { "split": true },
         "context": [
             { "key": "control", "operand": "sidebar_tree" }
         ]
@@ -74,8 +82,8 @@
             { "key": "control", "operand": "overlay_control goto_file" }
         ]
     },
-    { // alias of ctrl-x
-        "keys": ["ctrl+s"],
+    {
+        "keys": ["ctrl+s"], // Alias of ctrl-x
         "command": "neovintageous_files_open",
         "args": { "split": true },
         "context": [
@@ -88,8 +96,24 @@
         "command": "neovintageous_files_open",
         "args": { "tab": true },
         "context": [
+            { "key": "control", "operand": "sidebar_tree" }
+        ]
+    },
+    {
+        "keys": ["ctrl+t"],
+        "command": "neovintageous_files_open",
+        "args": { "tab": true },
+        "context": [
             { "key": "overlay_visible" },
             { "key": "control", "operand": "overlay_control goto_file" }
+        ]
+    },
+    {
+        "keys": ["ctrl+v"],
+        "command": "neovintageous_files_open",
+        "args": { "vsplit": true },
+        "context": [
+            { "key": "control", "operand": "sidebar_tree" }
         ]
     },
     {

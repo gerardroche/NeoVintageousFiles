@@ -1,10 +1,19 @@
 # Changelog
 
+## 1.2.0 - 2023-09-13
+
+### Added
+
+- Add sidebar `CTRL-x`, alias of `i`, open file selection in a horizontal split.
+- Add sidebar `CTRL-s`, alias of `i`, open file selection in a horizontal split.
+- Add sidebar `CTRL-v`, alias of `s`, open file selection in a vertical split.
+- Add sidebar `CTRL-t`, alias of `t`, open file selection in a new tab.
+
 ## 1.1.0 - 2023-09-09
 
 ### Added
 
-- Added `CTRL-x`: Open file selection in a horizontal split (alias of `CTRL-s`).
+- Add overlay `CTRL-x`, alias of `CTRL-s`, open file selection in a horizontal split.
 
 ## 1.0.3 - 2023-05-25
 

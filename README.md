@@ -46,16 +46,16 @@ Install through Package Control:
 
 **Sidebar Commands**
 
-| Key           | Description
-| :------------ | :------------------------
-| `a`           | Add a file.
-| `A`           | Add a folder.
-| `d`           | Duplicate a file.
-| `f`           | Open the find panel.
-| `m` or `F2`   | Move a file.
-| `s`           | Open file selection in a vertical split.
-| `i`           | Open file selection in a horizontal split.
-| `t`           | Open file selection in a new tab.
+| Key                         | Description
+| :-------------------------- | :------------------------
+| `a`                         | Add a file.
+| `A`                         | Add a folder.
+| `d`                         | Duplicate a file.
+| `f`                         | Open the find panel.
+| `F2` or `m`                 | Move a file.
+| `CTRL-v` or `s`             | Open file selection in a vertical split.
+| `CTRL-x` or `i` or `CTRL-s` | Open file selection in a horizontal split.
+| `CTRL-t` or `t`             | Open file selection in a new tab.
 
 **Goto File Overlay Commands**
 
