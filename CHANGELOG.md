@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.2.1 - 2023-09-13
+
+### Fixed
+
+- Add sidebar `CTRL-s`, alias of `i`, open file selection in a horizontal split.
+
 ## 1.2.0 - 2023-09-13
 
 ### Added

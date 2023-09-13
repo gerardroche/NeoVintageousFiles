@@ -83,6 +83,14 @@
         ]
     },
     {
+        "keys": ["ctrl+s"],  // Alias of ctrl+x
+        "command": "neovintageous_files_open",
+        "args": { "split": true },
+        "context": [
+            { "key": "control", "operand": "sidebar_tree" }
+        ]
+    },
+    {
         "keys": ["ctrl+s"], // Alias of ctrl-x
         "command": "neovintageous_files_open",
         "args": { "split": true },
