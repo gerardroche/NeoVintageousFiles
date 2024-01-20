@@ -16,6 +16,7 @@
 # along with NeoVintageousFiles.  If not, see <https://www.gnu.org/licenses/>.
 
 from contextlib import contextmanager
+import os
 
 from sublime import load_settings
 from sublime import save_settings
@@ -34,7 +35,7 @@ class NeovintageousFilesNewFile(sublime_plugin.WindowCommand):
 class NeovintageousFilesNewFolder(sublime_plugin.WindowCommand):
 
     def run(self):
-        _side_bar_command(self.window, 'side_bar_new')
+        _side_bar_command(self.window, 'side_bar_new', folder=True)
 
     def is_enabled(self) -> bool:
         return _has_active_view(self.window)
@@ -114,7 +115,7 @@ def _has_active_view(window) -> bool:
     return True if window.active_view() else False
 
 
-def _side_bar_command(window, command: str) -> None:
+def _side_bar_command(window, command: str, **kwargs) -> None:
     """There is no api to get a path under the cursor.
 
     The only workaround I know, is the preview on click feature which opens the
@@ -138,7 +139,7 @@ def _side_bar_command(window, command: str) -> None:
         window.run_command('move', {'by': 'lines', 'forward': False})
 
     window.run_command(command, {
-        'paths': []
+        'paths': _get_paths(window, **kwargs)
     })
 
     if not preview_on_click:
@@ -153,6 +154,23 @@ def _side_bar_command(window, command: str) -> None:
 
         # Put focus back on input.
         window.run_command('show_panel', {'panel': 'input'})
+
+
+def _get_paths(window, **kwargs) -> list:
+    if kwargs.get('folder'):
+        folder = _get_folder(window)
+        if folder:
+            return [folder]
+
+    return []
+
+
+def _get_folder(window):
+    view = window.active_view()
+    if view:
+        file_name = view.file_name()
+        if file_name:
+            return os.path.dirname(file_name)
 
 
 @contextmanager

@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.2.2 - 2024-01-20
+
+### Fixed
+
+- Add new side bar folder (`A`) prompts for new file instead of new folder
+
 ## 1.2.1 - 2023-09-13
 
 ### Fixed
