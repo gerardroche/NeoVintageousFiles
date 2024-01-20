@@ -28,7 +28,7 @@ class NeovintageousFilesNewFile(sublime_plugin.WindowCommand):
         _run_command(self.window, 'side_bar_new', {'paths': []})
 
     def is_enabled(self) -> bool:
-        return _is_enabled(self.window)
+        return _has_active_view(self.window)
 
 
 class NeovintageousFilesNewFolder(sublime_plugin.WindowCommand):
@@ -37,7 +37,7 @@ class NeovintageousFilesNewFolder(sublime_plugin.WindowCommand):
         _run_command(self.window, 'side_bar_new', {'paths': []})
 
     def is_enabled(self) -> bool:
-        return _is_enabled(self.window)
+        return _has_active_view(self.window)
 
 
 class NeovintageousFilesDuplicate(sublime_plugin.WindowCommand):
@@ -46,7 +46,7 @@ class NeovintageousFilesDuplicate(sublime_plugin.WindowCommand):
         _run_command(self.window, 'side_bar_duplicate', {'paths': []})
 
     def is_enabled(self) -> bool:
-        return _is_enabled(self.window)
+        return _has_active_view(self.window)
 
 
 class NeovintageousFilesFind(sublime_plugin.WindowCommand):
@@ -57,7 +57,7 @@ class NeovintageousFilesFind(sublime_plugin.WindowCommand):
         })
 
     def is_enabled(self) -> bool:
-        return _is_enabled(self.window)
+        return _has_active_view(self.window)
 
 
 class NeovintageousFilesMove(sublime_plugin.WindowCommand):
@@ -66,7 +66,7 @@ class NeovintageousFilesMove(sublime_plugin.WindowCommand):
         _run_command(self.window, 'side_bar_move', {'paths': []})
 
     def is_enabled(self) -> bool:
-        return _is_enabled(self.window)
+        return _has_active_view(self.window)
 
 
 class NeovintageousFilesOpen(sublime_plugin.WindowCommand):
@@ -92,7 +92,7 @@ class NeovintageousFilesOpen(sublime_plugin.WindowCommand):
             self.open_file_in_tab(fname)
 
     def is_enabled(self) -> bool:
-        return _is_enabled(self.window)
+        return _has_active_view(self.window)
 
     def open_file_in_vertical_split(self, fname: str) -> None:
         self.window.open_file(fname)
@@ -110,7 +110,7 @@ class NeovintageousFilesOpen(sublime_plugin.WindowCommand):
         self.window.open_file(fname)
 
 
-def _is_enabled(window) -> bool:
+def _has_active_view(window) -> bool:
     return True if window.active_view() else False
 
 
