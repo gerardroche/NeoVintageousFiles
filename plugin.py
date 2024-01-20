@@ -25,7 +25,7 @@ import sublime_plugin
 class NeovintageousFilesNewFile(sublime_plugin.WindowCommand):
 
     def run(self):
-        _side_bar_command(self.window, 'side_bar_new', {'paths': []})
+        _side_bar_command(self.window, 'side_bar_new')
 
     def is_enabled(self) -> bool:
         return _has_active_view(self.window)
@@ -34,7 +34,7 @@ class NeovintageousFilesNewFile(sublime_plugin.WindowCommand):
 class NeovintageousFilesNewFolder(sublime_plugin.WindowCommand):
 
     def run(self):
-        _side_bar_command(self.window, 'side_bar_new', {'paths': []})
+        _side_bar_command(self.window, 'side_bar_new')
 
     def is_enabled(self) -> bool:
         return _has_active_view(self.window)
@@ -43,7 +43,7 @@ class NeovintageousFilesNewFolder(sublime_plugin.WindowCommand):
 class NeovintageousFilesDuplicate(sublime_plugin.WindowCommand):
 
     def run(self):
-        _side_bar_command(self.window, 'side_bar_duplicate', {'paths': []})
+        _side_bar_command(self.window, 'side_bar_duplicate')
 
     def is_enabled(self) -> bool:
         return _has_active_view(self.window)
@@ -63,7 +63,7 @@ class NeovintageousFilesFind(sublime_plugin.WindowCommand):
 class NeovintageousFilesMove(sublime_plugin.WindowCommand):
 
     def run(self):
-        _side_bar_command(self.window, 'side_bar_move', {'paths': []})
+        _side_bar_command(self.window, 'side_bar_move')
 
     def is_enabled(self) -> bool:
         return _has_active_view(self.window)
@@ -114,7 +114,7 @@ def _has_active_view(window) -> bool:
     return True if window.active_view() else False
 
 
-def _side_bar_command(window, command: str, args: None, **kwargs) -> None:
+def _side_bar_command(window, command: str) -> None:
     """There is no api to get a path under the cursor.
 
     The only workaround I know, is the preview on click feature which opens the
@@ -137,8 +137,9 @@ def _side_bar_command(window, command: str, args: None, **kwargs) -> None:
         window.run_command('move', {'by': 'lines', 'forward': True})
         window.run_command('move', {'by': 'lines', 'forward': False})
 
-    # Run command.
-    window.run_command(command, args)
+    window.run_command(command, {
+        'paths': []
+    })
 
     if not preview_on_click:
         # Reset preview on click if needed
