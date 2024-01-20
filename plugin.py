@@ -25,7 +25,7 @@ import sublime_plugin
 class NeovintageousFilesNewFile(sublime_plugin.WindowCommand):
 
     def run(self):
-        _run_command(self.window, 'side_bar_new', {'paths': []})
+        _side_bar_command(self.window, 'side_bar_new', {'paths': []})
 
     def is_enabled(self) -> bool:
         return _has_active_view(self.window)
@@ -34,7 +34,7 @@ class NeovintageousFilesNewFile(sublime_plugin.WindowCommand):
 class NeovintageousFilesNewFolder(sublime_plugin.WindowCommand):
 
     def run(self):
-        _run_command(self.window, 'side_bar_new', {'paths': []})
+        _side_bar_command(self.window, 'side_bar_new', {'paths': []})
 
     def is_enabled(self) -> bool:
         return _has_active_view(self.window)
@@ -43,7 +43,7 @@ class NeovintageousFilesNewFolder(sublime_plugin.WindowCommand):
 class NeovintageousFilesDuplicate(sublime_plugin.WindowCommand):
 
     def run(self):
-        _run_command(self.window, 'side_bar_duplicate', {'paths': []})
+        _side_bar_command(self.window, 'side_bar_duplicate', {'paths': []})
 
     def is_enabled(self) -> bool:
         return _has_active_view(self.window)
@@ -63,7 +63,7 @@ class NeovintageousFilesFind(sublime_plugin.WindowCommand):
 class NeovintageousFilesMove(sublime_plugin.WindowCommand):
 
     def run(self):
-        _run_command(self.window, 'side_bar_move', {'paths': []})
+        _side_bar_command(self.window, 'side_bar_move', {'paths': []})
 
     def is_enabled(self) -> bool:
         return _has_active_view(self.window)
@@ -114,7 +114,7 @@ def _has_active_view(window) -> bool:
     return True if window.active_view() else False
 
 
-def _run_command(window, command: str, args: None) -> None:
+def _side_bar_command(window, command: str, args: None, **kwargs) -> None:
     """There is no api to get a path under the cursor.
 
     The only workaround I know, is the preview on click feature which opens the
