@@ -23,6 +23,16 @@ from sublime import save_settings
 import sublime_plugin
 
 
+class NeovintageousFiles(sublime_plugin.WindowCommand):
+
+    def run(self, action):
+        if action == 'open':
+            _focus_active_view(self.window)
+
+    def is_enabled(self) -> bool:
+        return _has_active_view(self.window)
+
+
 class NeovintageousFilesNewFile(sublime_plugin.WindowCommand):
 
     def run(self):
@@ -177,3 +187,7 @@ def _get_folder(window):
 def _save_preferences():
     yield load_settings('Preferences.sublime-settings')
     save_settings('Preferences.sublime-settings')
+
+
+def _focus_active_view(window) -> None:
+    window.focus_view(window.active_view())
