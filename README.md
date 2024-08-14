@@ -1,48 +1,39 @@
-# NeoVintageous Files
+# NeoVintageousFiles
 
-:sparkles: :rocket: Introducing NeoVintageous Files - your gateway to seamless file management with single-key sidebar and goto file overlay commands, designed to complement the power of [NeoVintageous](https://github.com/NeoVintageous/NeoVintageous).
-
-**:sparkles: :sparkles: :sparkles: Experimental :sparkles: :sparkles: :sparkles:**
+NeoVintageousFiles is a NeoVintageous plugin to enhance browsing files in the sidebar and overlays.
 
 ## Installation
 
-### Dependencies
+### Prerequisites
 
-Before you embark on your journey with NeoVintageous Files, make sure you have the following dependencies installed:
+Install the following dependencies:
 
-- [SideBarTools](https://packagecontrol.io/packages/SideBarTools) - This package adds essential support for sidebar commands.
-- [Origami](https://packagecontrol.io/packages/Origami) - Enhance your Sublime Text experience by improving the ability to open files in split view.
+- [SideBarTools](https://github.com/braver/SideBarTools)
+- [Origami](https://packagecontrol.io/packages/Origami)
 
-### Install
+### Package Control installation
 
-Follow one of these methods to install NeoVintageous Files:
+1. Open the Command Palette: `Ctrl+Shift+P` (Win/Linux) or `Cmd+Shift+P` (Mac).
+1. Type "Package Control: Install Package" and press Enter.
+1. In the input field, type "**NeoVintageousFiles**" and select it from the list of packages.
+1. Restart Sublime Text.
 
-**Method 1: Using Package Control**
+### Git installation
 
-1. Launch Sublime Text.
-2. Press `Ctrl+Shift+P` (Windows/Linux) or `Cmd+Shift+P` (macOS) to summon the Command Palette.
-3. Type "Package Control: Install Package" and hit `Enter`.
-4. In the input field, type "NeoVintageousFiles" and select it from the list of available packages.
-
-**Method 2: Manual Installation**
-
-1. Visit the [NeoVintageousFiles GitHub repository](https://github.com/gerardroche/NeoVintageousFiles).
-2. Click on the "Code" button and choose "Download ZIP."
-3. Extract the downloaded ZIP file.
-4. Open Sublime Text and navigate to `Preferences -> Browse Packages...` to open the Packages folder.
-5. Copy the "NeoVintageousFiles" folder from the extracted ZIP and paste it into the Packages folder.
-
-**Method 3: Manual Git Repository Installation**
-
-1. Fire up your terminal or command prompt.
-2. Navigate to the Sublime Text Packages directory:
-    - On Windows: `%APPDATA%\Sublime Text\Packages`
-    - On macOS: `~/Library/Application Support/Sublime Text/Packages`
-    - On Linux: `~/.config/sublime-text/Packages`
-3. Clone the plugin repository directly into the Packages directory using Git:
+1. Clone NeoVintageousFiles into the Sublime Text directory:
+   Linux
+   ```sh
+   git clone https://github.com/gerardroche/NeoVintageousFiles.git ~/.config/sublime-text/Packages/NeoVintageousFiles
    ```
-   git clone https://github.com/gerardroche/NeoVintageousFiles.git NeoVintageousFiles
+   Mac
+   ```sh
+   git clone https://github.com/gerardroche/NeoVintageousFiles.git ~/Library/Application Support/Sublime Text/Packages/NeoVintageousFiles
    ```
+   Windows
+   ```sh
+   git clone https://github.com/gerardroche/NeoVintageousFiles.git %APPDATA%\Sublime Text\Packages\NeoVintageousFiles
+   ```
+1. Restart Sublime Text
 
 ## Key Bindings
 
@@ -50,24 +41,33 @@ Follow one of these methods to install NeoVintageous Files:
 
 | Key                         | Description
 | :-------------------------- | :------------------------
-| `a`                         | Add a file.
+| `<cr>`                      | Open file.
 | `A`                         | Add a folder.
-| `d`                         | Duplicate a file.
-| `f`                         | Open the find panel.
-| `F2` or `m`                 | Move a file.
+| `CTRL-t` or `t`             | Open file selection in a new tab.
 | `CTRL-v` or `s`             | Open file selection in a vertical split.
 | `CTRL-x` or `i` or `CTRL-s` | Open file selection in a horizontal split.
-| `CTRL-t` or `t`             | Open file selection in a new tab.
+| `F2` or `m`                 | Move a file.
+| `J`                         | Go to last child node. \*
+| `P`                         | Go to root node. \*
+| `a`                         | Add a file.
+| `d`                         | Duplicate a file.
+| `f`                         | Open the find panel.
+| `h`                         | Close node. \*
+| `j`                         | Down. \*
+| `k`                         | Up. \*
+| `l`                         | Open node. \*
+| `p`                         | Go to parent node. \*
+| `q`                         | Close sidebar. \*
+
+\* Default in NeoVintageous
 
 **Goto File Overlay Commands**
 
 | Key                   | Description
 | :-------------------- | :----------
+| `CTRL-t`              | Open file selection in a new tab.
 | `CTRL-v`              | Open file selection in a vertical split.
 | `CTRL-x` or `CTRL-s`  | Open file selection in a horizontal split.
-| `CTRL-t`              | Open file selection in a new tab.
-
-Enhance your file management prowess with NeoVintageous Files and simplify your workflow with these intuitive single-key commands.
 
 ## Changelog
 
